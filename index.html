@@ -513,8 +513,11 @@
   });
 
   document.getElementById('applyNowBtn').addEventListener('click', function(){
-    document.getElementById('admissions').scrollIntoView({behavior:'smooth'});
-  });
+  window.open(
+    'https://docs.google.com/forms/d/e/1FAIpQLSeez2WE3S9OfId1Da-r1p2itaztYWv7HI3p7G19AuzOkvNJ7g/viewform',
+    '_blank'
+  );
+});
 
   var settingsBtn = document.getElementById('settingsBtn');
   var settingsPanel = document.getElementById('settingsPanel');
