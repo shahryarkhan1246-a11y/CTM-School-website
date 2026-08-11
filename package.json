@@ -1,0 +1,12 @@
+{
+  "name": "ctm-high-school",
+  "version": "1.0.0",
+  "description": "Govt. CTM High School, Ismailabad — website + admissions + results, backed by a real SQLite database. Zero external dependencies.",
+  "main": "server.js",
+  "engines": { "node": ">=22.5.0" },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}
