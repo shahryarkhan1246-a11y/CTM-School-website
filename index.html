@@ -741,6 +741,201 @@
 
 })();
 </script>
+<!-- CTM SCHOOL PREMIUM MOVING BRAND LINE -->
+<style>
+.ctm-school-line {
+  position: relative;
+  width: 100%;
+  margin: 35px 0 10px;
+  padding: 18px 10px;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    #071a2d,
+    #0b3d62,
+    #126e82,
+    #0b3d62,
+    #071a2d
+  );
+  background-size: 300% 100%;
+  animation: ctmBg 8s linear infinite;
+  border-top: 2px solid rgba(255,255,255,.7);
+  border-bottom: 2px solid rgba(255,255,255,.7);
+  box-shadow:
+    0 0 15px rgba(0, 170, 255, .35),
+    inset 0 0 20px rgba(255,255,255,.08);
+}
 
+/* Moving glowing light */
+.ctm-school-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.8),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: ctmLight 3.5s linear infinite;
+}
+
+/* Urdu School Name */
+.ctm-school-name {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", serif;
+  font-size: clamp(21px, 4vw, 36px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-shadow:
+    0 0 5px rgba(255,255,255,.8),
+    0 0 15px rgba(0,200,255,.8),
+    0 0 30px rgba(0,140,255,.5);
+  animation: ctmText 3s ease-in-out infinite alternate;
+}
+
+/* Small decorative lines */
+.ctm-decoration {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.ctm-decoration span {
+  display: block;
+  height: 2px;
+  width: 75px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ffffff,
+    transparent
+  );
+  box-shadow: 0 0 8px #00c8ff;
+}
+
+.ctm-star {
+  color: #ffd700;
+  font-size: 18px;
+  animation: starGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* English subtitle */
+.ctm-subtitle {
+  position: relative;
+  z-index: 2;
+  margin-top: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.75);
+}
+
+/* Background animation */
+@keyframes ctmBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Moving shine */
+@keyframes ctmLight {
+  0% {
+    left: -30%;
+  }
+  100% {
+    left: 130%;
+  }
+}
+
+/* Text glow */
+@keyframes ctmText {
+  from {
+    transform: scale(1);
+    text-shadow:
+      0 0 5px rgba(255,255,255,.7),
+      0 0 12px rgba(0,200,255,.6);
+  }
+
+  to {
+    transform: scale(1.02);
+    text-shadow:
+      0 0 8px rgba(255,255,255,1),
+      0 0 20px rgba(0,200,255,.9),
+      0 0 35px rgba(0,120,255,.7);
+  }
+}
+
+/* Star glow */
+@keyframes starGlow {
+  from {
+    opacity: .5;
+    transform: scale(.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .ctm-school-line {
+    padding: 14px 5px;
+    margin-top: 25px;
+  }
+
+  .ctm-school-name {
+    font-size: 21px;
+  }
+
+  .ctm-decoration span {
+    width: 35px;
+  }
+
+  .ctm-subtitle {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+}
+</style>
+
+<div class="ctm-school-line">
+
+  <div class="ctm-decoration">
+    <span></span>
+    <div class="ctm-star">✦</div>
+    <span></span>
+  </div>
+
+  <div class="ctm-school-name" dir="rtl">
+    گورنمنٹ سی ٹی ایم ہائی سکول، اسماعیل آباد، ملتان
+  </div>
+
+  <div class="ctm-subtitle">
+    GOVERNMENT CTM HIGH SCHOOL • ISMAILABAD • MULTAN
+  </div>
+
+</div>
 </body>
 </html>
