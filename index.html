@@ -660,3 +660,1207 @@
 
 </body>
 </html>
+
+
+<!-- =========================================================
+     CTM SCHOOL — SIGNATURE CAMPUS EXPERIENCE
+     PREMIUM / CINEMATIC / RESPONSIVE
+     ========================================================= -->
+
+<style>
+.ctm-campus{
+  --ctm-radius:32px;
+  --ctm-gap:20px;
+  --ctm-ease:cubic-bezier(.16,1,.3,1);
+  position:relative;
+  width:100%;
+  max-width:1450px;
+  margin:auto;
+  padding:110px 24px;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+
+/* Background atmosphere */
+.ctm-campus::before{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  left:-300px;
+  top:10%;
+  border-radius:50%;
+  background:rgba(120,120,120,.08);
+  filter:blur(90px);
+  pointer-events:none;
+}
+
+.ctm-campus::after{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  right:-250px;
+  bottom:5%;
+  border-radius:50%;
+  background:rgba(120,120,120,.07);
+  filter:blur(90px);
+  pointer-events:none;
+}
+
+
+/* ================= HEADER ================= */
+
+.ctm-campus-header{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  align-items:end;
+  gap:60px;
+  margin-bottom:55px;
+}
+
+.ctm-campus-label{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  opacity:.55;
+}
+
+.ctm-campus-label i{
+  width:38px;
+  height:1px;
+  display:block;
+  background:currentColor;
+}
+
+.ctm-campus-title{
+  margin:0;
+  max-width:760px;
+
+  font-size:clamp(42px,6.5vw,78px);
+  line-height:.94;
+  letter-spacing:-4px;
+  font-weight:950;
+}
+
+.ctm-campus-title span{
+  opacity:.45;
+}
+
+.ctm-campus-intro{
+  max-width:480px;
+  justify-self:end;
+
+  font-size:15px;
+  line-height:1.9;
+  opacity:.62;
+}
+
+
+/* ================= DECORATIVE TOP LINE ================= */
+
+.ctm-campus-meta{
+  position:relative;
+  z-index:2;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  margin-bottom:18px;
+
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  opacity:.48;
+}
+
+.ctm-campus-meta-line{
+  flex:1;
+  height:1px;
+  margin:0 20px;
+  background:currentColor;
+  opacity:.25;
+}
+
+
+/* ================= GALLERY ================= */
+
+.ctm-campus-grid{
+  position:relative;
+  z-index:2;
+
+  display:grid;
+
+  grid-template-columns:1.65fr 1fr;
+  grid-template-rows:320px 320px;
+
+  gap:var(--ctm-gap);
+}
+
+
+/* ================= PHOTO CARD ================= */
+
+.ctm-campus-card{
+  position:relative;
+  overflow:hidden;
+  min-width:0;
+  min-height:0;
+
+  border-radius:var(--ctm-radius);
+
+  background:#111;
+
+  cursor:zoom-in;
+  isolation:isolate;
+
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.14);
+
+  transform:translateZ(0);
+
+  transition:
+    transform .8s var(--ctm-ease),
+    box-shadow .8s var(--ctm-ease);
+}
+
+.ctm-campus-card:hover{
+  transform:translateY(-10px);
+  box-shadow:
+    0 38px 110px rgba(0,0,0,.23);
+}
+
+.ctm-campus-card.main{
+  grid-row:1 / 3;
+}
+
+
+/* ================= IMAGE ================= */
+
+.ctm-campus-card img{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transform:scale(1.001);
+
+  transition:
+    transform 1.4s var(--ctm-ease),
+    filter 1s ease;
+}
+
+.ctm-campus-card:hover img{
+  transform:scale(1.09);
+}
+
+
+/* ================= CINEMATIC LAYERS ================= */
+
+.ctm-campus-card .ctm-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.02) 10%,
+      rgba(0,0,0,.08) 40%,
+      rgba(0,0,0,.88) 100%
+    );
+
+  pointer-events:none;
+}
+
+.ctm-campus-card .ctm-glow{
+  position:absolute;
+  inset:0;
+  z-index:2;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255,255,255,.16),
+      transparent 42%
+    );
+
+  opacity:.45;
+  pointer-events:none;
+}
+
+
+/* ================= PREMIUM FRAME ================= */
+
+.ctm-campus-frame{
+  position:absolute;
+  inset:11px;
+  z-index:5;
+
+  border:1px solid rgba(255,255,255,.30);
+  border-radius:22px;
+
+  pointer-events:none;
+
+  transition:
+    inset .9s var(--ctm-ease),
+    border-color .5s ease;
+}
+
+.ctm-campus-card:hover .ctm-campus-frame{
+  inset:7px;
+  border-color:rgba(255,255,255,.58);
+}
+
+
+/* ================= TOP INFORMATION ================= */
+
+.ctm-campus-badge{
+  position:absolute;
+  top:25px;
+  left:27px;
+  z-index:6;
+
+  display:flex;
+  align-items:center;
+  gap:9px;
+
+  padding:9px 14px;
+
+  border-radius:100px;
+
+  color:white;
+
+  background:rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.24);
+
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.ctm-campus-badge::before{
+  content:"";
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:currentColor;
+}
+
+
+/* ================= CONTENT ================= */
+
+.ctm-campus-content{
+  position:absolute;
+  left:29px;
+  right:29px;
+  bottom:28px;
+  z-index:7;
+
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:20px;
+
+  color:white;
+}
+
+.ctm-campus-copy{
+  min-width:0;
+}
+
+.ctm-campus-number{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:40px;
+  height:40px;
+
+  margin-bottom:11px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.30);
+
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+
+  font-size:11px;
+  font-weight:900;
+}
+
+.ctm-campus-content h3{
+  margin:0 0 6px;
+
+  font-size:clamp(21px,3vw,34px);
+  line-height:1.04;
+  letter-spacing:-.8px;
+  font-weight:900;
+}
+
+.ctm-campus-content p{
+  margin:0;
+
+  font-size:12px;
+  line-height:1.5;
+  opacity:.82;
+}
+
+
+/* ================= VIEW BUTTON ================= */
+
+.ctm-campus-view{
+  flex:0 0 auto;
+
+  width:52px;
+  height:52px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  color:white;
+
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.30);
+
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+
+  font-size:21px;
+
+  transition:
+    transform .6s var(--ctm-ease),
+    background .4s ease;
+}
+
+.ctm-campus-card:hover .ctm-campus-view{
+  transform:translate(4px,-4px) rotate(5deg) scale(1.08);
+  background:rgba(255,255,255,.23);
+}
+
+
+/* ================= PROGRESS ================= */
+
+.ctm-campus-progress{
+  position:absolute;
+  left:29px;
+  right:29px;
+  bottom:13px;
+  z-index:8;
+
+  height:2px;
+
+  border-radius:20px;
+
+  background:rgba(255,255,255,.18);
+  overflow:hidden;
+}
+
+.ctm-campus-progress span{
+  display:block;
+  width:25%;
+  height:100%;
+  background:white;
+  opacity:.85;
+}
+
+
+/* ================= LIGHTBOX ================= */
+
+.ctm-campus-lightbox{
+  position:fixed;
+  inset:0;
+  z-index:999999;
+
+  display:none;
+  align-items:center;
+  justify-content:center;
+
+  padding:30px;
+
+  background:rgba(3,3,3,.95);
+
+  backdrop-filter:blur(25px);
+  -webkit-backdrop-filter:blur(25px);
+}
+
+.ctm-campus-lightbox.open{
+  display:flex;
+  animation:ctmLbFade .3s ease;
+}
+
+@keyframes ctmLbFade{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+.ctm-campus-lightbox img{
+  max-width:90vw;
+  max-height:82vh;
+
+  object-fit:contain;
+
+  border-radius:18px;
+
+  box-shadow:
+    0 35px 120px rgba(0,0,0,.8);
+
+  animation:
+    ctmLbImage .55s var(--ctm-ease);
+}
+
+@keyframes ctmLbImage{
+  from{
+    opacity:0;
+    transform:scale(.94);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+
+/* ================= LIGHTBOX BUTTONS ================= */
+
+.ctm-lb-button{
+  position:fixed;
+  z-index:10;
+
+  width:54px;
+  height:54px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  border:1px solid rgba(255,255,255,.25);
+
+  background:rgba(255,255,255,.10);
+
+  color:white;
+
+  cursor:pointer;
+
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+
+  transition:
+    transform .35s ease,
+    background .35s ease;
+}
+
+.ctm-lb-close{
+  top:22px;
+  right:24px;
+  font-size:25px;
+}
+
+.ctm-lb-prev{
+  left:24px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:27px;
+}
+
+.ctm-lb-next{
+  right:24px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:27px;
+}
+
+.ctm-lb-close:hover{
+  transform:rotate(90deg);
+  background:rgba(255,255,255,.22);
+}
+
+.ctm-lb-prev:hover,
+.ctm-lb-next:hover{
+  transform:translateY(-50%) scale(1.1);
+  background:rgba(255,255,255,.22);
+}
+
+
+/* ================= COUNTER ================= */
+
+.ctm-lb-counter{
+  position:fixed;
+  bottom:25px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  padding:9px 16px;
+
+  border-radius:100px;
+
+  color:white;
+
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.20);
+
+  backdrop-filter:blur(16px);
+
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+
+/* ================= TABLET ================= */
+
+@media(max-width:850px){
+
+  .ctm-campus{
+    padding:75px 18px;
+  }
+
+  .ctm-campus-header{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .ctm-campus-intro{
+    justify-self:start;
+  }
+
+  .ctm-campus-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:360px 250px 250px;
+  }
+
+  .ctm-campus-card.main{
+    grid-column:1 / 3;
+    grid-row:1;
+  }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:560px){
+
+  .ctm-campus{
+    padding:55px 12px;
+  }
+
+  .ctm-campus-title{
+    letter-spacing:-2px;
+  }
+
+  .ctm-campus-grid{
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    grid-template-rows:
+      330px
+      235px
+      235px
+      235px;
+
+    gap:14px;
+  }
+
+  .ctm-campus-card.main{
+    grid-column:auto;
+    grid-row:auto;
+  }
+
+  .ctm-campus-card{
+    border-radius:21px;
+  }
+
+  .ctm-campus-frame{
+    inset:8px;
+    border-radius:15px;
+  }
+
+  .ctm-campus-content{
+    left:19px;
+    right:19px;
+    bottom:19px;
+  }
+
+  .ctm-campus-badge{
+    top:18px;
+    left:19px;
+  }
+
+  .ctm-campus-progress{
+    left:19px;
+    right:19px;
+  }
+
+  .ctm-campus-view{
+    width:43px;
+    height:43px;
+  }
+
+  .ctm-campus-lightbox{
+    padding:10px;
+  }
+
+  .ctm-campus-lightbox img{
+    max-width:96vw;
+    max-height:78vh;
+  }
+
+  .ctm-lb-prev{
+    left:8px;
+  }
+
+  .ctm-lb-next{
+    right:8px;
+  }
+
+}
+
+
+/* ================= REDUCED MOTION ================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  .ctm-campus *,
+  .ctm-campus-lightbox *{
+    animation:none!important;
+    transition:none!important;
+  }
+
+}
+
+</style>
+
+
+<!-- =========================================================
+     CAMPUS SECTION
+     ========================================================= -->
+
+<section class="ctm-campus">
+
+  <div class="ctm-campus-header">
+
+    <div>
+
+      <div class="ctm-campus-label">
+        <i></i>
+        CTM SCHOOL
+      </div>
+
+      <h2 class="ctm-campus-title">
+        Our Campus,<br>
+        <span>Our Identity.</span>
+      </h2>
+
+    </div>
+
+    <p class="ctm-campus-intro">
+      Explore the spaces and environment that represent
+      the learning experience, character and identity of
+      CTM School.
+    </p>
+
+  </div>
+
+
+  <div class="ctm-campus-meta">
+    <span>Campus Collection</span>
+    <span class="ctm-campus-meta-line"></span>
+    <span>04 Views</span>
+  </div>
+
+
+  <div class="ctm-campus-grid">
+
+
+    <!-- ================= IMAGE 01 ================= -->
+
+    <article
+      class="ctm-campus-card main"
+      tabindex="0"
+      role="button"
+      data-index="0"
+    >
+
+      <img
+        src="school-gate-outside.webp"
+        alt="CTM School main entrance gate"
+        loading="eager"
+        decoding="async"
+      >
+
+      <span class="ctm-overlay"></span>
+      <span class="ctm-glow"></span>
+      <span class="ctm-campus-frame"></span>
+
+      <span class="ctm-campus-badge">
+        Main Entrance
+      </span>
+
+      <div class="ctm-campus-content">
+
+        <div class="ctm-campus-copy">
+
+          <span class="ctm-campus-number">
+            01
+          </span>
+
+          <h3>
+            Main School Entrance
+          </h3>
+
+          <p>
+            Welcome to CTM School
+          </p>
+
+        </div>
+
+        <span class="ctm-campus-view">
+          ↗
+        </span>
+
+      </div>
+
+      <div class="ctm-campus-progress">
+        <span></span>
+      </div>
+
+    </article>
+
+
+    <!-- ================= IMAGE 02 ================= -->
+
+    <article
+      class="ctm-campus-card"
+      tabindex="0"
+      role="button"
+      data-index="1"
+    >
+
+      <img
+        src="school-gate-inside.webp"
+        alt="CTM School campus from inside the entrance"
+        loading="lazy"
+        decoding="async"
+      >
+
+      <span class="ctm-overlay"></span>
+      <span class="ctm-glow"></span>
+      <span class="ctm-campus-frame"></span>
+
+      <span class="ctm-campus-badge">
+        Campus
+      </span>
+
+      <div class="ctm-campus-content">
+
+        <div class="ctm-campus-copy">
+
+          <span class="ctm-campus-number">
+            02
+          </span>
+
+          <h3>
+            Inside Campus
+          </h3>
+
+          <p>
+            A closer view of our environment
+          </p>
+
+        </div>
+
+        <span class="ctm-campus-view">
+          ↗
+        </span>
+
+      </div>
+
+      <div class="ctm-campus-progress">
+        <span></span>
+      </div>
+
+    </article>
+
+
+    <!-- ================= IMAGE 03 ================= -->
+
+    <article
+      class="ctm-campus-card"
+      tabindex="0"
+      role="button"
+      data-index="2"
+    >
+
+      <img
+        src="primary-section-01.webp"
+        alt="CTM School primary section"
+        loading="lazy"
+        decoding="async"
+      >
+
+      <span class="ctm-overlay"></span>
+      <span class="ctm-glow"></span>
+      <span class="ctm-campus-frame"></span>
+
+      <span class="ctm-campus-badge">
+        Primary
+      </span>
+
+      <div class="ctm-campus-content">
+
+        <div class="ctm-campus-copy">
+
+          <span class="ctm-campus-number">
+            03
+          </span>
+
+          <h3>
+            Primary Section
+          </h3>
+
+          <p>
+            Our primary learning environment
+          </p>
+
+        </div>
+
+        <span class="ctm-campus-view">
+          ↗
+        </span>
+
+      </div>
+
+      <div class="ctm-campus-progress">
+        <span></span>
+      </div>
+
+    </article>
+
+
+    <!-- ================= IMAGE 04 ================= -->
+
+    <article
+      class="ctm-campus-card"
+      tabindex="0"
+      role="button"
+      data-index="3"
+    >
+
+      <img
+        src="primary-section-02.webp"
+        alt="CTM School primary campus"
+        loading="lazy"
+        decoding="async"
+      >
+
+      <span class="ctm-overlay"></span>
+      <span class="ctm-glow"></span>
+      <span class="ctm-campus-frame"></span>
+
+      <span class="ctm-campus-badge">
+        Campus View
+      </span>
+
+      <div class="ctm-campus-content">
+
+        <div class="ctm-campus-copy">
+
+          <span class="ctm-campus-number">
+            04
+          </span>
+
+          <h3>
+            School Environment
+          </h3>
+
+          <p>
+            Another view of our campus
+          </p>
+
+        </div>
+
+        <span class="ctm-campus-view">
+          ↗
+        </span>
+
+      </div>
+
+      <div class="ctm-campus-progress">
+        <span></span>
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FULLSCREEN IMAGE VIEWER
+     ========================================================= -->
+
+<div
+  class="ctm-campus-lightbox"
+  id="ctmCampusLightbox"
+  aria-hidden="true"
+>
+
+  <button
+    class="ctm-lb-button ctm-lb-close"
+    id="ctmLbClose"
+    aria-label="Close"
+  >
+    ×
+  </button>
+
+  <button
+    class="ctm-lb-button ctm-lb-prev"
+    id="ctmLbPrev"
+    aria-label="Previous image"
+  >
+    ‹
+  </button>
+
+  <img
+    id="ctmLbImage"
+    src=""
+    alt=""
+  >
+
+  <button
+    class="ctm-lb-button ctm-lb-next"
+    id="ctmLbNext"
+    aria-label="Next image"
+  >
+    ›
+  </button>
+
+  <div
+    class="ctm-lb-counter"
+    id="ctmLbCounter"
+  >
+    01 / 04
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   CTM PREMIUM LIGHTBOX
+   ========================================================= */
+
+(function(){
+
+  const cards =
+    document.querySelectorAll(
+      ".ctm-campus-card"
+    );
+
+  const lightbox =
+    document.getElementById(
+      "ctmCampusLightbox"
+    );
+
+  const image =
+    document.getElementById(
+      "ctmLbImage"
+    );
+
+  const close =
+    document.getElementById(
+      "ctmLbClose"
+    );
+
+  const prev =
+    document.getElementById(
+      "ctmLbPrev"
+    );
+
+  const next =
+    document.getElementById(
+      "ctmLbNext"
+    );
+
+  const counter =
+    document.getElementById(
+      "ctmLbCounter"
+    );
+
+  let current = 0;
+
+
+  function openViewer(index){
+
+    current = index;
+
+    const source =
+      cards[current].querySelector("img");
+
+    image.src = source.src;
+    image.alt = source.alt;
+
+    counter.textContent =
+      String(current + 1).padStart(2,"0")
+      + " / "
+      + String(cards.length).padStart(2,"0");
+
+    lightbox.classList.add("open");
+
+    lightbox.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    document.body.style.overflow =
+      "hidden";
+  }
+
+
+  function closeViewer(){
+
+    lightbox.classList.remove("open");
+
+    lightbox.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    document.body.style.overflow =
+      "";
+  }
+
+
+  function nextImage(){
+
+    current =
+      (current + 1)
+      % cards.length;
+
+    openViewer(current);
+  }
+
+
+  function previousImage(){
+
+    current =
+      (current - 1 + cards.length)
+      % cards.length;
+
+    openViewer(current);
+  }
+
+
+  cards.forEach(function(card,index){
+
+    card.addEventListener(
+      "click",
+      function(){
+        openViewer(index);
+      }
+    );
+
+    card.addEventListener(
+      "keydown",
+      function(event){
+
+        if(
+          event.key === "Enter" ||
+          event.key === " "
+        ){
+
+          event.preventDefault();
+
+          openViewer(index);
+        }
+
+      }
+    );
+
+  });
+
+
+  close.addEventListener(
+    "click",
+    closeViewer
+  );
+
+  next.addEventListener(
+    "click",
+    nextImage
+  );
+
+  prev.addEventListener(
+    "click",
+    previousImage
+  );
+
+
+  lightbox.addEventListener(
+    "click",
+    function(event){
+
+      if(event.target === lightbox){
+        closeViewer();
+      }
+
+    }
+  );
+
+
+  document.addEventListener(
+    "keydown",
+    function(event){
+
+      if(
+        !lightbox.classList.contains("open")
+      ){
+        return;
+      }
+
+      if(event.key === "Escape"){
+        closeViewer();
+      }
+
+      if(event.key === "ArrowRight"){
+        nextImage();
+      }
+
+      if(event.key === "ArrowLeft"){
+        previousImage();
+      }
+
+    }
+  );
+
+})();
+
+  </script>
