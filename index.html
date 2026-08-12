@@ -937,5 +937,82 @@
   </div>
 
 </div>
+  <!-- CTM MOVING SCHOOL TICKER -->
+<style>
+.ctm-moving-ticker {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(90deg, #061b32, #087f8c, #063b63);
+  border-top: 2px solid #d4af37;
+  border-bottom: 2px solid #d4af37;
+  box-shadow: 0 0 18px rgba(0, 200, 255, 0.45);
+  padding: 10px 0;
+  white-space: nowrap;
+}
+
+.ctm-moving-track {
+  display: inline-block;
+  animation: ctmMove 18s linear infinite;
+  padding-left: 100%;
+}
+
+.ctm-moving-text {
+  display: inline-block;
+  font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow:
+    0 0 6px #fff,
+    0 0 14px #00d9ff;
+}
+
+.ctm-dot {
+  color: #ffd700;
+  margin: 0 25px;
+  font-size: 20px;
+}
+
+@keyframes ctmMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .ctm-moving-text {
+    font-size: 18px;
+  }
+}
+</style>
+
+<div class="ctm-moving-ticker">
+  <div class="ctm-moving-track">
+
+    <span class="ctm-moving-text" dir="rtl">
+      گورنمنٹ سی ٹی ایم ہائی سکول، اسماعیل آباد، ملتان
+    </span>
+
+    <span class="ctm-dot">✦</span>
+
+    <span class="ctm-moving-text">
+      GOVERNMENT CTM HIGH SCHOOL ISMAILABAD MULTAN
+    </span>
+
+    <span class="ctm-dot">✦</span>
+
+    <span class="ctm-moving-text" dir="rtl">
+      علم، تربیت اور روشن مستقبل
+    </span>
+
+    <span class="ctm-dot">✦</span>
+
+  </div>
+</div>
 </body>
 </html>
