@@ -249,6 +249,1150 @@
   </div>
 </header>
 
+  <!-- =========================================================
+     CTM SCHOOL — ULTIMATE 3D PREMIUM INTRO
+========================================================= -->
+
+<style>
+
+/* ===============================
+   MAIN 3D SECTION
+================================ */
+
+.ctm-3d-opening{
+
+  position:relative;
+
+  width:100%;
+  min-height:420px;
+
+  overflow:hidden;
+
+  display:flex;
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+
+  perspective:1200px;
+
+  background:
+
+    radial-gradient(
+      ellipse at 50% 42%,
+      rgba(18,135,160,.35),
+      transparent 42%
+    ),
+
+    radial-gradient(
+      ellipse at 10% 55%,
+      rgba(0,180,220,.12),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      ellipse at 90% 55%,
+      rgba(212,165,45,.12),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      135deg,
+      #01050b,
+      #041a2c 25%,
+      #073e54 50%,
+      #041a2c 75%,
+      #01050b
+    );
+
+  background-size:180% 180%;
+
+  animation:
+    ctm3DBG 18s ease-in-out infinite;
+
+  border-bottom:2px solid #b99527;
+
+  box-shadow:
+
+    inset 0 0 80px rgba(0,0,0,.55),
+
+    inset 0 1px 0 rgba(255,255,255,.1);
+}
+
+
+/* ===============================
+   SOFT WHITE SIDE LIGHTS
+================================ */
+
+.ctm-3d-opening::before,
+.ctm-3d-opening::after{
+
+  content:"";
+
+  position:absolute;
+
+  top:7%;
+
+  width:25%;
+
+  height:86%;
+
+  z-index:1;
+
+  pointer-events:none;
+
+  opacity:.35;
+
+  animation:
+    ctmSideDissolve 8s ease-in-out infinite;
+}
+
+
+/* LEFT SIDE */
+
+.ctm-3d-opening::before{
+
+  left:0;
+
+  border-left:
+    1px solid rgba(255,255,255,.18);
+
+  border-right:
+    1px solid rgba(255,255,255,.05);
+
+  background:
+
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255,255,255,.025) 25%,
+      rgba(255,255,255,.10) 55%,
+      rgba(255,255,255,.025) 78%,
+      transparent 100%
+    );
+
+  mask-image:
+
+    linear-gradient(
+      to right,
+      transparent,
+      black 22%,
+      black 70%,
+      transparent
+    );
+
+  transform:
+    perspective(700px)
+    rotateY(18deg);
+}
+
+
+/* RIGHT SIDE */
+
+.ctm-3d-opening::after{
+
+  right:0;
+
+  border-left:
+    1px solid rgba(255,255,255,.05);
+
+  border-right:
+    1px solid rgba(255,255,255,.18);
+
+  background:
+
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255,255,255,.025) 22%,
+      rgba(255,255,255,.10) 55%,
+      rgba(255,255,255,.025) 78%,
+      transparent 100%
+    );
+
+  mask-image:
+
+    linear-gradient(
+      to left,
+      transparent,
+      black 22%,
+      black 70%,
+      transparent
+    );
+
+  transform:
+    perspective(700px)
+    rotateY(-18deg);
+}
+
+
+/* SIDE LIGHT SLOW DISSOLVE */
+
+@keyframes ctmSideDissolve{
+
+  0%{
+
+    opacity:.08;
+
+    filter:
+      blur(4px);
+
+    transform:
+      perspective(700px)
+      rotateY(18deg)
+      scaleX(.94);
+  }
+
+  25%{
+
+    opacity:.48;
+
+    filter:
+      blur(0);
+
+    transform:
+      perspective(700px)
+      rotateY(18deg)
+      scaleX(1);
+  }
+
+  50%{
+
+    opacity:.18;
+
+    filter:
+      blur(2px);
+
+    transform:
+      perspective(700px)
+      rotateY(18deg)
+      scaleX(1.02);
+  }
+
+  75%{
+
+    opacity:.38;
+
+    filter:
+      blur(1px);
+
+    transform:
+      perspective(700px)
+      rotateY(18deg)
+      scaleX(1);
+  }
+
+  100%{
+
+    opacity:.06;
+
+    filter:
+      blur(5px);
+
+    transform:
+      perspective(700px)
+      rotateY(18deg)
+      scaleX(1.06);
+  }
+
+}
+
+
+/* ===============================
+   MOVING CINEMATIC LIGHT
+================================ */
+
+.ctm-3d-light{
+
+  position:absolute;
+
+  top:-30%;
+  left:-30%;
+
+  width:35%;
+  height:160%;
+
+  z-index:2;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.09),
+      transparent
+    );
+
+  transform:
+    rotate(15deg)
+    skewX(-12deg);
+
+  animation:
+    ctm3DLight 8s ease-in-out infinite;
+
+  pointer-events:none;
+}
+
+
+@keyframes ctm3DLight{
+
+  0%{
+    left:-35%;
+  }
+
+  55%{
+    left:120%;
+  }
+
+  100%{
+    left:120%;
+  }
+
+}
+
+
+/* ===============================
+   3D FLOOR
+================================ */
+
+.ctm-3d-grid{
+
+  position:absolute;
+
+  left:-10%;
+  bottom:-90px;
+
+  width:120%;
+  height:170px;
+
+  z-index:1;
+
+  opacity:.14;
+
+  background-image:
+
+    linear-gradient(
+      rgba(100,220,235,.25) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(100,220,235,.25) 1px,
+      transparent 1px
+    );
+
+  background-size:45px 45px;
+
+  transform:
+    perspective(400px)
+    rotateX(65deg);
+
+  transform-origin:bottom;
+
+  mask-image:
+
+    linear-gradient(
+      to top,
+      black,
+      transparent
+    );
+}
+
+
+/* ===============================
+   TOP 3D EMBLEM
+================================ */
+
+.ctm-3d-top{
+
+  position:relative;
+
+  z-index:10;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:18px;
+
+  margin-bottom:20px;
+
+  opacity:0;
+
+  animation:
+    ctmTop3D 1.4s ease forwards;
+}
+
+
+.ctm-3d-top span{
+
+  width:95px;
+  height:2px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      transparent,
+      #d2ad3b
+    );
+
+  box-shadow:
+    0 1px 4px rgba(201,163,45,.4);
+}
+
+
+.ctm-3d-top span:last-child{
+
+  background:
+
+    linear-gradient(
+      90deg,
+      #d2ad3b,
+      transparent
+    );
+}
+
+
+.ctm-3d-emblem{
+
+  width:40px;
+  height:40px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  font-size:17px;
+
+  color:#fff1a0;
+
+  background:
+
+    radial-gradient(
+      circle at 35% 30%,
+      #fff3a8,
+      #d4ae36 30%,
+      #735817 70%,
+      #261b04
+    );
+
+  border:
+    2px solid #e1c45a;
+
+  box-shadow:
+
+    inset 3px 3px 5px rgba(255,255,255,.35),
+
+    inset -4px -4px 7px rgba(0,0,0,.5),
+
+    0 5px 15px rgba(0,0,0,.45),
+
+    0 0 18px rgba(212,174,54,.2);
+
+}
+
+
+@keyframes ctmTop3D{
+
+  from{
+
+    opacity:0;
+
+    transform:
+      translateY(-20px)
+      rotateX(25deg);
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+      translateY(0)
+      rotateX(0);
+  }
+
+}
+
+
+/* ===============================
+   3D TITLE
+================================ */
+
+.ctm-3d-title{
+
+  position:relative;
+
+  z-index:10;
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  justify-content:center;
+
+  gap:12px;
+
+  padding:0 12px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(25px,6vw,52px);
+
+  font-weight:1000;
+
+  letter-spacing:
+    clamp(1px,.7vw,6px);
+
+  text-transform:uppercase;
+
+  transform-style:preserve-3d;
+}
+
+
+.ctm-3d-word{
+
+  position:relative;
+
+  opacity:0;
+
+  transform:
+    translateY(35px)
+    rotateX(65deg)
+    scale(.85);
+
+  animation:
+
+    ctmWord3D
+
+    1.6s
+
+    cubic-bezier(.16,1,.3,1)
+
+    forwards;
+
+  color:#f5f8fa;
+
+  text-shadow:
+
+    1px 1px 0 #b8c0c4,
+    2px 2px 0 #8d979c,
+    3px 3px 0 #687278,
+    4px 4px 0 #4b555a,
+    5px 5px 0 #273035,
+
+    7px 10px 14px
+    rgba(0,0,0,.65),
+
+    0 0 22px
+    rgba(255,255,255,.12);
+}
+
+
+/* GOLD WORDS */
+
+.ctm-3d-word.gold{
+
+  color:#ffe47a;
+
+  text-shadow:
+
+    1px 1px 0 #d7ae31,
+    2px 2px 0 #b18720,
+    3px 3px 0 #806318,
+    4px 4px 0 #59440e,
+    5px 5px 0 #302406,
+
+    7px 10px 15px
+    rgba(0,0,0,.7),
+
+    0 0 25px
+    rgba(255,214,72,.22);
+}
+
+
+/* 3D SHINE */
+
+.ctm-3d-word::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+    linear-gradient(
+      115deg,
+      transparent 20%,
+      rgba(255,255,255,.55) 42%,
+      transparent 52%
+    );
+
+  background-size:220% 100%;
+
+  -webkit-background-clip:text;
+
+  background-clip:text;
+
+  color:transparent;
+
+  pointer-events:none;
+
+  animation:
+    ctmTextShine 5s ease-in-out infinite;
+}
+
+
+@keyframes ctmTextShine{
+
+  0%{
+    background-position:130% 0;
+  }
+
+  45%{
+    background-position:-30% 0;
+  }
+
+  100%{
+    background-position:-30% 0;
+  }
+
+}
+
+
+/* WORD ANIMATION */
+
+@keyframes ctmWord3D{
+
+  0%{
+
+    opacity:0;
+
+    transform:
+      translateY(35px)
+      rotateX(65deg)
+      scale(.85);
+
+    filter:blur(5px);
+  }
+
+  65%{
+
+    opacity:1;
+
+    transform:
+      translateY(0)
+      rotateX(0)
+      scale(1);
+
+    filter:blur(0);
+  }
+
+  100%{
+
+    opacity:1;
+
+    transform:
+      translateY(0)
+      rotateX(0)
+      scale(1);
+
+    filter:blur(0);
+  }
+
+}
+
+
+/* ===============================
+   URDU 3D NAME
+================================ */
+
+.ctm-3d-urdu{
+
+  position:relative;
+
+  z-index:10;
+
+  margin-top:27px;
+
+  padding:0 15px;
+
+  font-family:
+
+    "Noto Nastaliq Urdu",
+    "Jameel Noori Nastaleeq",
+    serif;
+
+  font-size:
+    clamp(21px,4vw,34px);
+
+  line-height:2;
+
+  color:#ffffff;
+
+  opacity:0;
+
+  transform:
+    translateY(25px)
+    rotateX(40deg);
+
+  animation:
+    ctmUrdu3D
+    1.8s
+    ease forwards;
+
+  animation-delay:4.3s;
+
+  text-shadow:
+
+    1px 1px 0 #c3c7c9,
+    2px 2px 0 #8c9498,
+    3px 3px 0 #596166,
+
+    5px 7px 12px
+    rgba(0,0,0,.7);
+}
+
+
+@keyframes ctmUrdu3D{
+
+  0%{
+
+    opacity:0;
+
+    transform:
+      translateY(25px)
+      rotateX(40deg);
+
+    filter:blur(4px);
+  }
+
+  100%{
+
+    opacity:1;
+
+    transform:
+      translateY(0)
+      rotateX(0);
+
+    filter:blur(0);
+  }
+
+}
+
+
+/* ===============================
+   PREMIUM 3D LINE
+================================ */
+
+.ctm-3d-line{
+
+  position:relative;
+
+  z-index:10;
+
+  width:min(540px,75%);
+
+  height:3px;
+
+  margin-top:17px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      transparent,
+      #6d5415,
+      #ffe47a,
+      #ffffff,
+      #ffe47a,
+      #6d5415,
+      transparent
+    );
+
+  box-shadow:
+
+    0 1px 0 #362706,
+
+    0 3px 8px rgba(0,0,0,.7),
+
+    0 0 15px rgba(212,174,54,.25);
+
+  transform:scaleX(0);
+
+  animation:
+    ctmLine3D
+    1.6s ease forwards;
+
+  animation-delay:5.2s;
+}
+
+
+.ctm-3d-line::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:50%;
+  left:50%;
+
+  width:6px;
+  height:6px;
+
+  border-radius:50%;
+
+  background:#d2ad3b;
+
+  box-shadow:
+    0 0 10px rgba(210,173,59,.65);
+
+  transform:
+    translate(-50%,-50%);
+}
+
+
+@keyframes ctmLine3D{
+
+  to{
+    transform:scaleX(1);
+  }
+
+}
+
+
+/* ===============================
+   SUBTITLE
+================================ */
+
+.ctm-3d-subtitle{
+
+  position:relative;
+
+  z-index:10;
+
+  margin-top:15px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:9px;
+
+  font-weight:bold;
+
+  letter-spacing:5px;
+
+  color:#b8e9f0;
+
+  opacity:0;
+
+  animation:
+    ctmSub3D
+    1.5s ease forwards;
+
+  animation-delay:5.7s;
+
+  text-shadow:
+    0 2px 7px #000;
+}
+
+
+@keyframes ctmSub3D{
+
+  from{
+
+    opacity:0;
+
+    transform:
+      translateY(10px);
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* ===============================
+   FLOATING LIGHTS
+================================ */
+
+.ctm-3d-particle{
+
+  position:absolute;
+
+  bottom:-10px;
+
+  width:3px;
+  height:3px;
+
+  border-radius:50%;
+
+  background:#70e3f2;
+
+  box-shadow:
+    0 0 12px #70e3f2;
+
+  opacity:0;
+
+  animation:
+    ctmParticle3D
+    8s linear infinite;
+}
+
+
+.ctm-3d-particle:nth-child(1){
+  left:12%;
+  animation-delay:1s;
+}
+
+.ctm-3d-particle:nth-child(2){
+  left:27%;
+  animation-delay:3s;
+}
+
+.ctm-3d-particle:nth-child(3){
+  left:74%;
+  animation-delay:2s;
+}
+
+.ctm-3d-particle:nth-child(4){
+  left:89%;
+  animation-delay:5s;
+}
+
+
+@keyframes ctmParticle3D{
+
+  0%{
+    opacity:0;
+    transform:translateY(0);
+  }
+
+  20%{
+    opacity:.55;
+  }
+
+  100%{
+    opacity:0;
+    transform:translateY(-300px);
+  }
+
+}
+
+
+/* ===============================
+   BOTTOM 3D EDGE
+================================ */
+
+.ctm-3d-bottom{
+
+  position:absolute;
+
+  left:0;
+  bottom:0;
+
+  width:100%;
+  height:4px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      transparent,
+      #075c70,
+      #5ad7e8,
+      #fff,
+      #d2ad3b,
+      #5ad7e8,
+      #075c70,
+      transparent
+    );
+
+  box-shadow:
+    0 0 20px rgba(90,215,232,.35);
+}
+
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media(max-width:600px){
+
+  .ctm-3d-opening{
+    min-height:350px;
+  }
+
+  .ctm-3d-top span{
+    width:45px;
+  }
+
+  .ctm-3d-emblem{
+    width:30px;
+    height:30px;
+    font-size:12px;
+  }
+
+  .ctm-3d-title{
+    font-size:22px;
+    gap:7px;
+  }
+
+  .ctm-3d-urdu{
+    font-size:19px;
+  }
+
+  .ctm-3d-subtitle{
+    font-size:6px;
+    letter-spacing:2px;
+  }
+
+  .ctm-3d-grid{
+    opacity:.08;
+  }
+
+}
+
+</style>
+
+
+<!-- =========================================================
+     CTM 3D INTRO HTML
+========================================================= -->
+
+<section class="ctm-3d-opening">
+
+
+  <!-- Moving white light -->
+
+  <div class="ctm-3d-light"></div>
+
+
+  <!-- 3D floor -->
+
+  <div class="ctm-3d-grid"></div>
+
+
+  <!-- Floating lights -->
+
+  <div class="ctm-3d-particle"></div>
+
+  <div class="ctm-3d-particle"></div>
+
+  <div class="ctm-3d-particle"></div>
+
+  <div class="ctm-3d-particle"></div>
+
+
+  <!-- Top emblem -->
+
+  <div class="ctm-3d-top">
+
+    <span></span>
+
+    <div class="ctm-3d-emblem">
+      ✦
+    </div>
+
+    <span></span>
+
+  </div>
+
+
+  <!-- 3D TITLE -->
+
+  <div class="ctm-3d-title">
+
+    <span
+      class="ctm-3d-word gold"
+      style="animation-delay:.6s">
+
+      CTM
+
+    </span>
+
+
+    <span
+      class="ctm-3d-word"
+      style="animation-delay:1.45s">
+
+      SCHOOL
+
+    </span>
+
+
+    <span
+      class="ctm-3d-word"
+      style="animation-delay:2.3s">
+
+      OFFICIAL
+
+    </span>
+
+
+    <span
+      class="ctm-3d-word gold"
+      style="animation-delay:3.15s">
+
+      WEBSITE
+
+    </span>
+
+  </div>
+
+
+  <!-- Urdu -->
+
+  <div
+    class="ctm-3d-urdu"
+    dir="rtl">
+
+    گورنمنٹ سی ٹی ایم ہائی سکول، اسماعیل آباد، ملتان
+
+  </div>
+
+
+  <!-- Premium line -->
+
+  <div class="ctm-3d-line"></div>
+
+
+  <!-- Subtitle -->
+
+  <div class="ctm-3d-subtitle">
+
+    EDUCATION • CHARACTER • EXCELLENCE
+
+  </div>
+
+
+  <!-- Bottom edge -->
+
+  <div class="ctm-3d-bottom"></div>
+
+
+</section>
+
+
+<!-- =========================================================
+     YOUR WEBSITE STARTS HERE
+========================================================= -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-scrim"></div>
